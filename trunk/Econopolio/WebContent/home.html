@@ -8,13 +8,66 @@
 		
 		<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 		<script type="text/javascript" src="js/jquery-ui-1.8.1.custom.min.js"></script>
+		<script type="text/javascript" src="js/game.js"></script>
         <title>Econopolio</title>
     </head>
     <body>
-    	<div id="controls" class="section left"></div>
-		<div id="playerInfo" class="section right"></div>
+    	<div id="playerInfo" class="section left">
+    		<div id="player">
+				<h2 id="playerName">Nombre Jugador</h2>
+				<h3 id="playerJob">Puesto</h3>
+				<label id="playerCompany">Empresa</label>
+    		</div>
+			<div id="game">
+				<p>
+					<label>Score: </label><label class="bold" id="playerScore">$600.0</label>
+				</p>
+				<p>
+					<label>Comodines disponibles: </label>
+					<ul>
+						<li><label class="bold">Saltar pregunta</label></li>
+						<li><label class="bold">Eliminar una respuesta</label></li>
+					</ul>
+				</p>
+			</div>
+			
+    	</div>
+		<div id="controls" class="section right">
+			<div>
+				<input type="button" id="btnStartNewGame" class="button" value="Abandonar partida" onclick="startNewGame()" />
+				<div id="caraDado" onClick="toggleDado()"></div>
+				<input type="button" id="btnAnimDado" class="button" value="Lanzar dado" onclick="toggleDado()" />
+			</div>
+		</div>
     	<div id="background" class="section center">
     		<img  src="media/monopoly1.png"/>
     	</div>
+		<div id="confirmDialog" style="display: none;">
+			<p>
+				<label id="dialogMsg"></label>
+			</p>
+			<p>
+				<input type="button" class="button" value="Si" onclick="closeConfirmDialog()" />
+				<input type="button" class="button" value="No" onclick="closeConfirmDialog()" />
+			</p>
+		</div>
+		<div id="questionDialog" style="display: none">
+			<p>
+				<label id="dialogQuestion">Ejemplo de pregunta</label>
+			</p>
+			<p>
+				<input id="btnQuestion1" type="button" class="questionButton" value="Ejemplo de opción 1" onclick="closeQuestionDialog(1)" />
+				<input id="btnQuestion2" type="button" class="questionButton" value="Ejemplo de opción 2" onclick="closeQuestionDialog(2)" />
+				<input id="btnQuestion3" type="button" class="questionButton" value="Ejemplo de opción 3" onclick="closeQuestionDialog(3)" />
+			</p>
+		</div>
+		<div id="responseDialog" style="display: none;">
+			<p>
+				<label id="dialogMsg"></label>
+			</p>
+			<p>
+				<input type="button" class="button" value="OK" onclick="closeResponseDialog()" />
+			</p>
+		</div>
     </body>
 </html>
