@@ -8,15 +8,18 @@
 		
 		<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 		<script type="text/javascript" src="js/jquery-ui-1.8.1.custom.min.js"></script>
+		<script type="text/javascript" src="js/preguntas.js"></script>
+		<script type="text/javascript" src="js/coordenadas.js"></script>
 		<script type="text/javascript" src="js/game.js"></script>
         <title>Econopolio</title>
     </head>
     <body>
+    	<div id="player">
     	<div id="playerInfo" class="section left">
     		<div id="player">
-				<h2 id="playerName">Nombre Jugador</h2>
-				<h3 id="playerJob">Puesto</h3>
-				<label id="playerCompany">Empresa</label>
+				<h2 id="playerName"></h2>
+				<h3 id="playerJob"></h3>
+				<label id="playerCompany"></label>
     		</div>
 			<div id="game">
 				<p>
@@ -34,7 +37,7 @@
     	</div>
 		<div id="controls" class="section right">
 			<div>
-				<input type="button" id="btnStartNewGame" class="button" value="Abandonar partida" onclick="startNewGame()" />
+				<input type="button" id="btnStartNewGame" class="button" value="Abandonar partida" onclick="startNewGame(false)" />
 				<div id="caraDado" onClick="toggleDado()"></div>
 				<input type="button" id="btnAnimDado" class="button" value="Lanzar dado" onclick="toggleDado()" />
 			</div>
@@ -42,13 +45,15 @@
     	<div id="background" class="section center">
     		<img  src="media/monopoly1.png"/>
     	</div>
+		
+		<!-- Dialogs -->
 		<div id="confirmDialog" style="display: none;">
 			<p>
 				<label id="dialogMsg"></label>
 			</p>
 			<p>
-				<input type="button" class="button" value="Si" onclick="closeConfirmDialog()" />
-				<input type="button" class="button" value="No" onclick="closeConfirmDialog()" />
+				<input type="button" class="button" value="Si" onclick="closeConfirmDialog(true)" />
+				<input type="button" class="button" value="No" onclick="closeConfirmDialog(false)" />
 			</p>
 		</div>
 		<div id="questionDialog" style="display: none">
@@ -56,18 +61,21 @@
 				<label id="dialogQuestion">Ejemplo de pregunta</label>
 			</p>
 			<p>
-				<input id="btnQuestion1" type="button" class="questionButton" value="Ejemplo de opción 1" onclick="closeQuestionDialog(1)" />
-				<input id="btnQuestion2" type="button" class="questionButton" value="Ejemplo de opción 2" onclick="closeQuestionDialog(2)" />
-				<input id="btnQuestion3" type="button" class="questionButton" value="Ejemplo de opción 3" onclick="closeQuestionDialog(3)" />
+				<input id="btnQuestion1" type="button" class="questionButton" value="Ejemplo de opción 1" onclick="evaluarRespuesta(1)" />
+				<input id="btnQuestion2" type="button" class="questionButton" value="Ejemplo de opción 2" onclick="evaluarRespuesta(2)" />
+				<input id="btnQuestion3" type="button" class="questionButton" value="Ejemplo de opción 3" onclick="evaluarRespuesta(3)" />
+			</p>
+			<p>
+				<div id="result"></div>
 			</p>
 		</div>
-		<div id="responseDialog" style="display: none;">
-			<p>
-				<label id="dialogMsg"></label>
-			</p>
-			<p>
-				<input type="button" class="button" value="OK" onclick="closeResponseDialog()" />
-			</p>
+		<div id="newPlayerDialog" style="display: none;">
+			<ul>
+				<li><label>Jugador:</label> <input id="txtJugador" type="text" /></li>
+				<li><label>Puesto:</label> <input id="txtPuesto" type="text" /></li>
+				<li><label>Empresa:</label> <input id="txtEmpresa" type="text" /></li>
+				<li><label> </label> <input id="btnEmpezar" type="button" class="button" onclick="closeNewPlayerDialog()" value="Empezar" /></li>
+			</ul>
 		</div>
     </body>
 </html>
