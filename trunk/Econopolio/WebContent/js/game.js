@@ -1,14 +1,10 @@
 $(document).ready(function(){
 	$(".button").button();
-	startNewGame(true);
-	$("body").bind("mousemove", function(evt){
-		$("#pos").html("x: " + evt.pageX + ", y: " + evt.pageY);
-	})
+	startNewGame();
+	$("#btnStartNewGame").click(function(){
+		openConfirmDialog("Está seguro que desea salir del juego?");
+	});
 });
-
-var dadoTossing = false;
-var dadoTimer = null;
-var dadoPositionsArr = [0, 50, 100, 150, 200, 250];
 
 //player data
 var playerName = "Jugador";
@@ -16,77 +12,15 @@ var playerJob = "Puesto";
 var playerCompany = "Empresa";
 var playerScore = 600;
 var scoreStep = 50;
-var confirmAnswer = false;
+var currentPregunta = 0;
 
-function toggleDado(){
-	if(dadoTossing){
-		stopAnimDado();
-		$("#btnAnimDado").val("Lanzar dado");
-	}
-	else{
-		startAnimDado();
-		$("#btnAnimDado").val("Detener dado");
-	}
-		
-	dadoTossing = !dadoTossing;
-}
-
-function startAnimDado(){
-	dadoTimer = setInterval("randomDadoFace()", 50);
-}
-
-function stopAnimDado(){
-	clearInterval(dadoTimer);
-	openQuestionDialog();
-}
-
-function randomDadoFace(){
-	var nextDadoPos = Math.floor(Math.random()*6);
-	var nextDadoPosStr = "-" + dadoPositionsArr[nextDadoPos] + "px 0px";
-	$("#caraDado").css("background-position", nextDadoPosStr);
-}
-
-function startNewGame(firstTime){
-	if(!firstTime)
-		openConfirmDialog("Está seguro que desea salir del juego?", function(){ openNewPlayerDialog(); });
-	else
-		openNewPlayerDialog();
-}
-
-
-function openConfirmDialog(dialogMsg){
-	$("#confirmDialog>p>label").html(dialogMsg);
-	
-	$("#confirmDialog").dialog({
-		modal: "true",
-		title: "Confirmación"
-	});
-}
-
-function closeConfirmDialog(answer){
-	$("#confirmDialog").dialog("close");
-	confirmAnswer = answer;
-}
-
-function openQuestionDialog(){
-	$("#questionDialog").dialog({
-		modal: true,
-		title: "Pregunta",
-		height: 450,
-		width: 800 
-	});
-}
-
-function closeQuestionDialog(respuesta){
-	$("#questionDialog").dialog("close");
-	if(evaluarRespuesta(respuesta))
-		playerScore += scoreStep;
-	else
-		playerScore -= scoreStep;
-		
-	$("#playerScore").html("$" + playerScore + ".0");
-	$("#playerScore").effect("highlight", {}, 3000);
-	$("#questionDialog").find(".questionButton").removeAttr("disabled");
+function startNewGame(){
+	$("#playerIcon").css("left", coordenadas[0].x);
+	$("#playerIcon").css("top", coordenadas[0].y);
+	resetDado();
+	resetPlayer();
+	playerScore = 600;
+	openNewPlayerDialog();
 }
 
 function evaluarRespuesta(respuesta){
@@ -95,36 +29,40 @@ function evaluarRespuesta(respuesta){
 		$("#result").removeClass("fail");
 		$("#result").addClass("success");
 		$("#result").html("Respuesta correcta!");
-		return true;
+		playerScore += scoreStep;
 	}
 	else{
 		$("#result").removeClass("success");
 		$("#result").addClass("fail");
 		$("#result").html("Respuesta equivocada");
+		playerScore -= scoreStep;
 	}
-	
-	return false;
-}
-
-function openNewPlayerDialog(){
-	$("#newPlayerDialog").dialog({
-		title: "Nuevo jugador",
-		modal: true,
-		height: 270,
-		width: 420,
-		close: function(){
-			playerName = $("#txtJugador").val();
-			playerJob = $("#txtPuesto").val();
-			playerCompany = $("#txtEmpresa").val();
 			
-			$("#playerName").html(playerName);
-			$("#playerJob").html(playerJob);
-			$("#playerCompany").html(playerCompany);
-		}
-	})
+	$("#playerScore").html("$" + playerScore + ".0");
+	$("#questionDialog").find(".questionButton").removeAttr("disabled");
+	
+	setTimeout("closeQuestionDialog()", 1500);
 }
 
-function closeNewPlayerDialog(){
-	$("#newPlayerDialog").dialog("close");
+function movePlayer(positions){
+	if((playerCurrentPos + positions) >= coordenadas.length)
+		positions = coordenadas.length - playerCurrentPos;
+	
+	for(var i=playerCurrentPos; i<=(playerCurrentPos+positions) && i<coordenadas.length; i++){
+		$("#playerIcon").animate({
+			left: coordenadas[i].x,
+			top: coordenadas[i].y,
+		}, 500);
+	}
+	setTimeout("afterMovePlayer(" + positions + ")", 700*positions);
 }
 
+function afterMovePlayer(positions){
+	playerCurrentPos += positions;
+	openQuestionDialog();
+}
+
+function resetPlayer(){
+	$("#playerIcon").css("left", coordenadas[0].x);
+	$("#playerIcon").css("top", coordenadas[0].y);
+}
