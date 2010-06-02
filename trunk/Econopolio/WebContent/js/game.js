@@ -12,6 +12,7 @@ var playerJob = "Puesto";
 var playerCompany = "Empresa";
 var playerScore = 600;
 var scoreStep = 50;
+var currentTipoPregunta = 0;
 var currentPregunta = 0;
 
 function startNewGame(){
@@ -25,7 +26,7 @@ function startNewGame(){
 
 function evaluarRespuesta(respuesta){
 	$("#questionDialog").find(".questionButton").attr("disabled", "true");
-	if(respuesta == 1){
+	if(respuesta == preguntas[currentTipoPregunta].preguntas[currentPregunta].correcta){
 		$("#result").removeClass("fail");
 		$("#result").addClass("success");
 		$("#result").html("Respuesta correcta!");
@@ -59,6 +60,11 @@ function movePlayer(positions){
 
 function afterMovePlayer(positions){
 	playerCurrentPos += positions;
+	currentPregunta = playerCurrentPos;
+	while(currentPregunta>=preguntas[currentTipoPregunta].preguntas.length){
+		currentPregunta -= preguntas[currentTipoPregunta].preguntas.length-1;
+		currentTipoPregunta++;
+	}
 	openQuestionDialog();
 }
 
