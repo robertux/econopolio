@@ -15,6 +15,18 @@ function closeConfirmDialog(answer){
 
 function openQuestionDialog(){
 	$("#result").html("");
+	$("#dialogQuestion").html(preguntas[currentTipoPregunta].preguntas[currentPregunta].pregunta);
+	$("#questionList").html("");
+	var ul = $("<ul>");
+	for(var i=0; i<preguntas[currentTipoPregunta].preguntas[currentPregunta].opciones.length; i++){
+		var opcion = $("<a>").attr("href", "#").attr("id", "btnQuestion" + i).addClass("questionOption");
+		opcion.click(function(){ evaluarRespuesta(i); });
+		opcion.html(preguntas[currentTipoPregunta].preguntas[currentPregunta].opciones[i])
+		var li = $("<li>");
+		li.append(opcion);
+		ul.append(li);
+	}
+	$("#questionList").append(ul);
 	
 	$("#questionDialog").dialog({
 		modal: true,
