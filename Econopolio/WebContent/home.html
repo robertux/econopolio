@@ -10,11 +10,12 @@
 		<script type="text/javascript" src="js/jquery-ui-1.8.1.custom.min.js"></script>
 		<script type="text/javascript" src="js/preguntas.js"></script>
 		<script type="text/javascript" src="js/coordenadas.js"></script>
+		<script type="text/javascript" src="js/dado.js"></script>
+		<script type="text/javascript" src="js/dialogs.js"></script>
 		<script type="text/javascript" src="js/game.js"></script>
         <title>Econopolio</title>
     </head>
     <body>
-    	<div id="player">
     	<div id="playerInfo" class="section left">
     		<div id="player">
 				<h2 id="playerName"></h2>
@@ -37,7 +38,7 @@
     	</div>
 		<div id="controls" class="section right">
 			<div>
-				<input type="button" id="btnStartNewGame" class="button" value="Abandonar partida" onclick="startNewGame(false)" />
+				<input type="button" id="btnStartNewGame" class="button" value="Abandonar partida" />
 				<div id="caraDado" onClick="toggleDado()"></div>
 				<input type="button" id="btnAnimDado" class="button" value="Lanzar dado" onclick="toggleDado()" />
 			</div>
@@ -77,5 +78,6 @@
 				<li><label> </label> <input id="btnEmpezar" type="button" class="button" onclick="closeNewPlayerDialog()" value="Empezar" /></li>
 			</ul>
 		</div>
+		<div id="playerIcon"></div>
     </body>
 </html>

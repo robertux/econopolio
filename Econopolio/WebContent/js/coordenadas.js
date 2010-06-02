@@ -1,3 +1,5 @@
+var playerCurrentPos = 0;
+
 var coordenadas = [
 	{x: 343, y: 106},
 	{x: 343, y: 156},
