@@ -6,6 +6,10 @@ body{
 	font-family: Verdana,Arial,sans-serif;
 }
 
+#player{
+	
+}
+
 .section{
 	height: 600px;
 	width: 300px;
@@ -70,4 +74,20 @@ body{
 
 .fail{
 	color: red;
+}
+
+#newPlayerDialog ul li{
+	list-style-type: none;
+	margin-bottom: 10px;
+}
+
+#newPlayerDialog ul li label{
+	display: block;
+	float: left;
+	width: 100px;
+}
+
+#newPlayerDialog ul li input[type="button"]{
+	float: right;
+	margin-top: 30px;
 }
