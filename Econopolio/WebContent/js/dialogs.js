@@ -30,7 +30,7 @@ function openQuestionDialog(){
 	
 	$("#questionDialog").dialog({
 		modal: true,
-		title: "Pregunta",
+		title: "Pregunta - " + preguntas[currentTipoPregunta].tipo,
 		height: 450,
 		width: 800 
 	});
@@ -38,6 +38,8 @@ function openQuestionDialog(){
 
 function closeQuestionDialog(respuesta){
 	$("#questionDialog").dialog("close");
+	checkForGameOver();
+	checkForWin();
 }
 
 function openNewPlayerDialog(){
@@ -60,4 +62,33 @@ function openNewPlayerDialog(){
 
 function closeNewPlayerDialog(){
 	$("#newPlayerDialog").dialog("close");
+}
+
+function openGameOverDialog(){
+	$("#gameOverDialog").dialog({
+			modal: true,
+			title: "Juego Terminado",
+		});
+}
+
+function closeGameOverDialog(){
+	$("#gameOverDialog").dialog("close");
+	
+	startNewGame();
+}
+
+function openWinDialog(){
+	$("#winDialog>p>label#title").html("Felicidades " + playerName + "!");
+	$("#winDialog>p>label#content").html("Has participado contestando " + preguntasContestadas + " preguntas, de las cuales " + preguntasAcertadas + " fueron correctamente contestadas. Tu puntuación es de " + roundNumber(((preguntasAcertadas / preguntasContestadas)*100),2) + "%");
+	$("#winDialog").dialog({
+		modal: true,
+		title: "Felicidades!",
+		width: 700,
+		height: 288
+	});
+}
+
+function closeWinDialog(){
+	$("#winDialog").dialog("close");
+	startNewGame();
 }

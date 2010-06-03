@@ -15,18 +15,28 @@ var scoreStep = 50;
 var currentTipoPregunta = 0;
 var currentPregunta = 0;
 
+var preguntasContestadas = 0;
+var preguntasAcertadas = 0;
+
 function startNewGame(){
 	$("#playerIcon").css("left", coordenadas[0].x);
 	$("#playerIcon").css("top", coordenadas[0].y);
 	resetDado();
 	resetPlayer();
 	playerScore = 600;
+	$("#playerScore").html("$" + playerScore + ".0");
+	currentTipoPregunta = 0;
+	currentPregunta = 0;
+	playerCurrentPos = 0;
+	preguntasAcertadas = 0;
+	preguntasContestadas = 0;
 	openNewPlayerDialog();
 }
 
 function evaluarRespuesta(respuesta){
-	$("#questionDialog").find(".questionButton").attr("disabled", "true");
+	preguntasContestadas++;
 	if(respuesta == preguntas[currentTipoPregunta].preguntas[currentPregunta].correcta){
+		preguntasAcertadas++;
 		$("#result").removeClass("fail");
 		$("#result").addClass("success");
 		$("#result").html("Respuesta correcta!");
@@ -40,7 +50,6 @@ function evaluarRespuesta(respuesta){
 	}
 			
 	$("#playerScore").html("$" + playerScore + ".0");
-	$("#questionDialog").find(".questionButton").removeAttr("disabled");
 	
 	setTimeout("closeQuestionDialog()", 1500);
 }
@@ -59,12 +68,15 @@ function movePlayer(positions){
 }
 
 function afterMovePlayer(positions){
-	console.debug("playerCurrentPos: " + playerCurrentPos);
-	console.debug("positions: " + positions);
-	playerCurrentPos += positions;
-	console.debug("newPlayerCurrentPos(currentPregunta): " + playerCurrentPos);
-	console.debug("preguntas en currentTipoPregunta: " + preguntas[currentTipoPregunta].preguntas.length);
-	currentPregunta += positions;
+	if((playerCurrentPos+positions) >= maxPos){
+		playerCurrentPos = maxPos;
+		currentPregunta = preguntas[currentTipoPregunta].preguntas.length-1;
+	}
+	else{
+		playerCurrentPos += positions;
+		currentPregunta += positions;
+	}
+	
 	while(currentPregunta>=preguntas[currentTipoPregunta].preguntas.length){
 		currentPregunta -= preguntas[currentTipoPregunta].preguntas.length-1;
 		currentTipoPregunta++;
@@ -75,4 +87,20 @@ function afterMovePlayer(positions){
 function resetPlayer(){
 	$("#playerIcon").css("left", coordenadas[0].x);
 	$("#playerIcon").css("top", coordenadas[0].y);
+}
+
+function checkForGameOver(){
+	if(playerScore == 0)
+		openGameOverDialog();
+}
+
+function checkForWin(){
+	if(playerCurrentPos >= maxPos)
+		openWinDialog();
+}
+
+
+function roundNumber(num, dec) {
+	var result = Math.round(num*Math.pow(10,dec))/Math.pow(10,dec);
+	return result;
 }

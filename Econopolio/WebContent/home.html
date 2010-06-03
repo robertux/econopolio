@@ -78,6 +78,25 @@
 				<li><label> </label> <input id="btnEmpezar" type="button" class="button" onclick="closeNewPlayerDialog()" value="Empezar" /></li>
 			</ul>
 		</div>
+		<div id="gameOverDialog" style="display: none;">
+			<p>
+				<label>Juego terminado. usted tiene capital cero en su empresa. Debe jugar nuevamente</label>
+			</p>
+			<p>
+				<input id="btnOk" type="button" class="button" onclick="closeGameOverDialog();" value="OK" />
+			</p>
+		</div>
+		<div id="winDialog" style="display: none;">
+			<p>
+				<label id="title">Felicidades!</label>
+			</p>
+			<p>
+				<label id="content">Has participado contestando # preguntas, de las cuales # fueron correctamente contestadas. Tu puntuación es de #%</label>
+			</p>
+			<p>
+				<input id="btnOk" type="button" class="button" onclick="closeWinDialog();" value="OK" />
+			</p>
+		</div>
 		<div id="playerIcon"></div>
     </body>
 </html>
