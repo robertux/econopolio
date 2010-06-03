@@ -2,7 +2,7 @@ $(document).ready(function(){
 	$(".button").button();
 	startNewGame();
 	$("#btnStartNewGame").click(function(){
-		openConfirmDialog("Está seguro que desea salir del juego?");
+		openConfirmDialog("Está seguro que desea reiniciar el juego?");
 	});
 });
 
@@ -11,7 +11,7 @@ var playerName = "Jugador";
 var playerJob = "Puesto";
 var playerCompany = "Empresa";
 var playerScore = 600;
-var scoreStep = 50;
+var scoreStep = 100;
 var currentTipoPregunta = 0;
 var currentPregunta = 0;
 
