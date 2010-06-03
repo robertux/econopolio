@@ -61,7 +61,35 @@ var preguntas =
 							"Invertir en el proyecto cuyo VAN sea igual a cero",
 							"Invertir en el proyecto cuyo VAN sea negativo"],
 				correcta: 0
+			},
+			{	pregunta: "Para usted, ¿Que es objetivo?",
+				opciones: ["Un enunciado detallado, preciso y medible de los resultados esperados.",
+							"Lo que se pretende hacer, no importa lo imposible que parezca",
+							"la intención de desarrollar un proyecto"],
+				correcta: 0
 			}]
+	},
+	{	tipo: "Producción y almacenamiento",
+		preguntas: [
+			{	pregunta: "Dos empresas con la misma productividad:",
+				opciones: ["Tienen el mismo volumen de ventas",
+							"Ninguna respuesta es correcta",
+							"Tienen siempre el mismo volumen de producción",
+							"Tienen el mismo número de trabajadores"],
+				correcta: 1
+			}
+		]
+	},
+	{	tipo: "Economia y financiamiento",
+		preguntas: [
+			{	pregunta: "¿Cuál de las siguientes medidas tomarías para solucionar un problema de desequilibrio financiero a corto plazo en una empresa?",
+				opciones: ["Incrementar el período de cobro a clientes",
+							"Negociar un crédito a corto plazo con una entidad financiera",
+							"Refinanciamiento de las deudas de corto a largo plazo",
+							"Incrementar las inversiones para producir más."],
+				correcta: 2
+			}
+		]
 	},
 	{	tipo: "Organizacion",
 		preguntas: [
@@ -135,48 +163,29 @@ var preguntas =
 							"Una departamentalización por productos"],
 				correcta: 0
 			},
-			{	pregunta: "Desde su punto de vista de la administración de la empresa, organizar significa:",
-				opciones: ["Atribuir un salario a cada trabajador en función de su puesto.",
-							"Asignar a los recursos disponibles un papel concreto a desempeñar por cada uno",
-							"Dividir la empresa en secciones y departamentos",
-							"Determinar el número mínimo de subordinados que pueden depender de un superior"],
-				correcta: 1			
-			},
-			{	pregunta: "La representación gráfica del conjunto de interrelaciones funcionales entre los departamentos de una empresa recibe el nombre de:",
-				opciones: ["Diagrama de sectores",
-							"Organigrama",
-							"Profesiograma",
-							"Anagrama"],
-				correcta: 1,
-			},
-			{	pregunta: "Indique que representa el organigrama:",
-				opciones: ["Ninguna es correcta",
-							"La comunicación formal e informal que se produce en la organización",
-							"El grado de especialización o ampliación de los puestos de trabajo",
-							"Las relaciones jerárquicas entre los integrantes de la organización"],
-				correcta: 3
-			},
-			{	pregunta: "El conjunto de personas sometidas a la autoridad de un superior conforma:",
-				opciones: ["Un comité",
-							"Un sindicato",
-							"Un nivel de la organización",
-							"Un área de mando"],
-				correcta: 3
-			},
-			{	pregunta: "La función de organización tiene como contenido fundamental:",
-				opciones: ["Comparar los resultados obtenidos con los que habían sido planificados",
-							"Elegir al director general de la empresa",
-							"Saber con antelación qué es lo que debe realizar la empresa",
-							"La división y coordinación del trabajo"],
-				correcta: 3
-			},
-			{	pregunta: "Para usted, El organigrama de una empresa refleja:",
-				opciones: ["Proporciona una visión gráfica y resumida de la estructura informal de la organización",
-							"El documento más importante de la empresa junto con el Balance",
-							"Proporciona una visión gráfica y resumida de la estructura formal de la organización",
-							"La interrelación entre los diferentes objetivos de la empresa"],
+			]},
+	{	tipo: "Producción y almacenamiento",
+		preguntas: [
+			{	pregunta: "Indique la mejor opción que define productividad",
+				opciones: ["El volumen de ventas",
+							"El volumen de beneficios obtenidos durante un período",
+							"La relación entre la producción de un periodo y los recursos consumidos para su obtención",
+							"La relación entre la producción de un período y los beneficios obtenidos"],
 				correcta: 2
-			}]},
+			}
+		]
+	},
+	{	tipo: "Economia y financiamiento",
+		preguntas: [
+			{	pregunta: "¿Cuál es la correcta definición de quiebra?",
+				opciones: ["Situación de falta de liquidez ya que la empresa no tiene disponibilidad para hacer frente a sus deudas en las fechas de sus respectivos vencimientos",
+							"Situación de insolvencia, ya que el patrimonio de la empresa es insuficiente para responder a todas las deudas que lo gravan",
+							"Situación que se produce cuando la empresa no obtiene beneficios durante los 5 primeros años de existencia",
+							"Situación de déficit por no haber llevado los libros de contabilidad en forma legal"],
+				correcta: 1
+			}
+		]
+	},
 	{	tipo: "Marketing",
 		preguntas: [
 			{	pregunta: "Las variables de marketing-mix son:",
@@ -235,51 +244,42 @@ var preguntas =
 							"Compran en grandes cantidades para vender a otros intermediarios"],
 				correcta: 3
 			},
+			{	pregunta: "Las variables de marketing-mix son:",
+				opciones: ["Producto, Precio, Promoción y Distribución",
+							"Investigación y Segmentación de mercados",
+							"Investigación comercial, canales de información, recepción de la información y tratamiento de la misma",
+							"Publicidad, Promoción y Distribución"],
+				correcta: 0
+			},
+			{	pregunta: "Dividir el mercado en subgrupos homogéneos con el fin de realizar estrategias comerciales diferenciadas, es:",
+				opciones: ["Segmentar el mercado",
+							"Promocionar el producto",
+							"Investigar el mercado",
+							"Diferenciar el producto"],
+				corecta: 0
+			}
 		]
 	},
 	{	tipo: "Producción y almacenamiento",
 		preguntas: [
-			{	pregunta: "Dos empresas con la misma productividad:",
-				opciones: ["Tienen el mismo volumen de ventas",
-							"Ninguna respuesta es correcta",
-							"Tienen siempre el mismo volumen de producción",
-							"Tienen el mismo número de trabajadores"],
-				correcta: 1
-			},
-			{	pregunta: "Indique la mejor opción que define productividad",
-				opciones: ["El volumen de ventas",
-							"El volumen de beneficios obtenidos durante un período",
-							"La relación entre la producción de un periodo y los recursos consumidos para su obtención",
-							"La relación entre la producción de un período y los beneficios obtenidos"],
-				correcta: 2
-			},
 			{	pregunta: "¿Sabe qué funciones cumplen los inventarios?",
 				opciones: ["Realizar funciones especulativas",
 							"Servir de reguladores entre los ritmos de salida de unas fases de producción y de entrada de otras",
 							"Hacer frente a la oferta de bienes",
 							"Acumular existencias para que el Activo de una empresa sea grande"],
 				correcta: 1
-			},
-			{	pregunta: "Señala la afirmación correcta:",
-				opciones: ["Cuando la empresa no produce, temporalmente, no incurre en costes fijos",
-							"El coste se define como el valor, expresado en unidades monetarias, del consumo de los factores de producción",
-							"Los costes de compras de materias primas son fijos",
-							"Aunque la empresa no produzca, temporalmente, incurre en costes variables"],
-				correcta: 1
-			},
-			{	pregunta: "Para usted se mantendrán bajos niveles de inventarios cuando:",
-				opciones: ["Se incrementa de forma extraordinaria la productividad",
-							"Los costes de almacenamiento sean altos",
-							"Se esperan fuertes subidas de los precios",
-							"Los costes de almacenamiento sean bajos"],
-				correcta: 1
-			},
-			{	pregunta: "Si una empresa aplica el sistema JUSTO A TIEMPO:",
-				opciones: ["No necesitará Materia Prima",
-							"Tiene un Activo Circulante formado mayoritariamente por Existencias",
-							"Tendrá sus almacenes llenos de productos acabados",
-							"No tendrá sus almacenes llenos de productos acabados"],
-				correcta: 4
 			}
 		]
-	}];
+	},
+	{	tipo: "Economia y financiamiento",
+		preguntas: [
+			{	pregunta: "La relación entre el resultado obtenido por una empresa y el capital de la misma, se denomina:",
+				opciones: ["Economicidad",
+							"Rentabilidad",
+							"Productividad",
+							"Eficiencia"],
+				correcta: 1
+			}
+		]
+	},
+];
