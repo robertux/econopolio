@@ -78,7 +78,7 @@ function afterMovePlayer(positions){
 	}
 	
 	while(currentPregunta>=preguntas[currentTipoPregunta].preguntas.length){
-		currentPregunta -= preguntas[currentTipoPregunta].preguntas.length-1;
+		currentPregunta -= preguntas[currentTipoPregunta].preguntas.length-2;
 		currentTipoPregunta++;
 	}
 	openQuestionDialog();
