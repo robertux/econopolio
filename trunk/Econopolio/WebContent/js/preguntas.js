@@ -236,4 +236,50 @@ var preguntas =
 				correcta: 3
 			},
 		]
+	},
+	{	tipo: "Producción y almacenamiento",
+		preguntas: [
+			{	pregunta: "Dos empresas con la misma productividad:",
+				opciones: ["Tienen el mismo volumen de ventas",
+							"Ninguna respuesta es correcta",
+							"Tienen siempre el mismo volumen de producción",
+							"Tienen el mismo número de trabajadores"],
+				correcta: 1
+			},
+			{	pregunta: "Indique la mejor opción que define productividad",
+				opciones: ["El volumen de ventas",
+							"El volumen de beneficios obtenidos durante un período",
+							"La relación entre la producción de un periodo y los recursos consumidos para su obtención",
+							"La relación entre la producción de un período y los beneficios obtenidos"],
+				correcta: 2
+			},
+			{	pregunta: "¿Sabe qué funciones cumplen los inventarios?",
+				opciones: ["Realizar funciones especulativas",
+							"Servir de reguladores entre los ritmos de salida de unas fases de producción y de entrada de otras",
+							"Hacer frente a la oferta de bienes",
+							"Acumular existencias para que el Activo de una empresa sea grande"],
+				correcta: 1
+			},
+			{	pregunta: "Señala la afirmación correcta:",
+				opciones: ["Cuando la empresa no produce, temporalmente, no incurre en costes fijos",
+							"El coste se define como el valor, expresado en unidades monetarias, del consumo de los factores de producción",
+							"Los costes de compras de materias primas son fijos",
+							"Aunque la empresa no produzca, temporalmente, incurre en costes variables"],
+				correcta: 1
+			},
+			{	pregunta: "Para usted se mantendrán bajos niveles de inventarios cuando:",
+				opciones: ["Se incrementa de forma extraordinaria la productividad",
+							"Los costes de almacenamiento sean altos",
+							"Se esperan fuertes subidas de los precios",
+							"Los costes de almacenamiento sean bajos"],
+				correcta: 1
+			},
+			{	pregunta: "Si una empresa aplica el sistema JUSTO A TIEMPO:",
+				opciones: ["No necesitará Materia Prima",
+							"Tiene un Activo Circulante formado mayoritariamente por Existencias",
+							"Tendrá sus almacenes llenos de productos acabados",
+							"No tendrá sus almacenes llenos de productos acabados"],
+				correcta: 4
+			}
+		]
 	}];
