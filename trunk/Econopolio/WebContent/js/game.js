@@ -59,8 +59,12 @@ function movePlayer(positions){
 }
 
 function afterMovePlayer(positions){
+	console.debug("playerCurrentPos: " + playerCurrentPos);
+	console.debug("positions: " + positions);
 	playerCurrentPos += positions;
-	currentPregunta = playerCurrentPos;
+	console.debug("newPlayerCurrentPos(currentPregunta): " + playerCurrentPos);
+	console.debug("preguntas en currentTipoPregunta: " + preguntas[currentTipoPregunta].preguntas.length);
+	currentPregunta += positions;
 	while(currentPregunta>=preguntas[currentTipoPregunta].preguntas.length){
 		currentPregunta -= preguntas[currentTipoPregunta].preguntas.length-1;
 		currentTipoPregunta++;

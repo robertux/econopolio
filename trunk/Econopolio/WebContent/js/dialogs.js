@@ -20,7 +20,7 @@ function openQuestionDialog(){
 	var ul = $("<ul>");
 	for(var i=0; i<preguntas[currentTipoPregunta].preguntas[currentPregunta].opciones.length; i++){
 		var opcion = $("<a>").attr("href", "#").attr("id", "btnQuestion" + i).addClass("questionOption");
-		opcion.click(function(){ evaluarRespuesta(i); });
+		opcion.attr("onclick", "evaluarRespuesta(" + i + ")");
 		opcion.html(preguntas[currentTipoPregunta].preguntas[currentPregunta].opciones[i])
 		var li = $("<li>");
 		li.append(opcion);
