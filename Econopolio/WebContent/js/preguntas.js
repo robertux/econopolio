@@ -18,14 +18,14 @@ var preguntas =
 							"Proyectar un futuro deseado y los medios para conseguirlo",
 							"Formular el mejor modelo de desarrollo. ",
 							"Discutir un problema y encontrarle solución. "],
-				correcta: 0
+				correcta: 1
 			},
 			{	pregunta: "¿En qué circunstancias se debe ejercitar la Planeación?",
 				opciones: ["Cuando ya se tengan resultados. ",
 							"No importa el tiempo, siempre se aplica ",
 							"Antes de que se inicien las acciones del proyecto ",
 							"Un tiempo después de iniciadas las acciones. "],
-				correcta: 0
+				correcta: 2
 			},
 			{	pregunta: "¿En qué circunstancias tiene posibilidades de influir la Planeación? ",
 				opciones: ["Cuando incremente las posibilidades de alcanzar los objetivos. ",
@@ -39,21 +39,21 @@ var preguntas =
 							"El Valor Actual Neto (VAN)",
 							"Todos los índices",
 							"El Plazo de Recuperación "],
-				correcta: 0
+				correcta: 3
 			},
 			{	pregunta: "Indique el concepto de inversión, entre las siguientes opciones:",
 				opciones: ["La adquisición de títulos-valores",
 							"Todos los gastos del grupo 6 del Plan General de Contabilidad",
 							"El acto de aplicar recursos al mantenimiento y ampliación del capital productivo.",
 							"La compra de bienes y servicios por parte de la empresa"],
-				correcta: 0
+				correcta: 2
 			},
 			{	pregunta: "Señala la respuesta correcta:",
 				opciones: ["Con las inversiones productivas se adquieren activos como acciones, obligaciones, bonos, etc.",
 							"Una inversión en elementos de transporte la podemos clasificar como inversión de activo circulante",
 							"Con las inversiones financieras se adquieren activos como materias primas, mercaderías, mobiliario, elementos de transporte, etc.",
 							"Una de las clasificaciones de las inversiones distingue entre inversiones de activo fijo e inversiones de activo circulante"],
-				correcta: 0
+				correcta: 3
 			},
 			{	pregunta: "Si tuviéramos que invertir en varios proyectos de inversión alternativos, aplicando el método VAN, nos decidiríamos por:.",
 				opciones: ["Invertir en el proyecto cuyo VAN sea mayor",
@@ -70,21 +70,21 @@ var preguntas =
 							"La de producir los bienes y servicios necesarios para satisfacer las necesidades humanas.",
 							"La de obtención del máximo beneficio para el accionista",
 							"La de creación de empleo"],
-				correcta: 0
+				correcta: 1
 			},
 			{	pregunta: "El objetivo fundamental de la empresa, definida como unidad económica de producción es:",
 				opciones: ["La transformación de la materia prima",
 							"La producción de bienes de consumo",
 							"La producción de bienes intermedios",
 							"La creación de utilidad"],
-				correcta: 0
+				correcta: 3
 			},
 			{	pregunta: "Desde el punto de vista social el empresario es, ante todo:",
 				opciones: ["El director financiero",
 							"El propietario de la empresa",
 							"El que posee acciones de la empresa",
 							"El que asume la responsabilidad de la gestión de la empresa"],
-				correcta: 0
+				correcta: 3
 			},
 			{	pregunta: "¿Qué entiende por demanda de un bien?",
 				opciones: ["La cantidad que de dicho bien adquiere el consumidor a un determinado precio",
@@ -98,21 +98,21 @@ var preguntas =
 							"Exponen sus productos para la venta",
 							"Van a comprar lo que necesitan",
 							"Intercambian libremente bienes y factores productivos"],
-				correcta: 0
+				correcta: 3
 			},
 			{	pregunta: "A la empresa se la define como:",
 				opciones: ["La unidad económica de inversión",
 							"La unidad económica de marketing",
 							"La unidad económica de consumo",
 							"La unidad económica de producción",],
-				correcta: 0
+				correcta: 3
 			},
 			{	pregunta: "¿Qué es una empresa pública?",
 				opciones: ["Aquella que ofrece bienes públicos en el mercado",
 							"Aquella en la que puede entrar cualquier persona",
 							"Aquella cuyo capital pertenece al Estado",
 							"Aquella que recibe su capital de muchas personas"],
-				correcta: 0
+				correcta: 2
 			},
 			{	pregunta: "Indique que establece el principio de unidad de mando:",
 				opciones: ["Una persona sólo debe recibir órdenes de un jefe",
