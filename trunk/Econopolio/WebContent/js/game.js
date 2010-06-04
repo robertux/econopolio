@@ -15,6 +15,9 @@ var scoreStep = 100;
 var currentTipoPregunta = 0;
 var currentPregunta = 0;
 
+var comodinSaltarPreguntaUsed = false;
+var comodinEliminarOpcionesUsed = false;
+
 var preguntasContestadas = 0;
 var preguntasAcertadas = 0;
 
@@ -30,6 +33,12 @@ function startNewGame(){
 	playerCurrentPos = 0;
 	preguntasAcertadas = 0;
 	preguntasContestadas = 0;
+	
+	comodinEliminarOpcionesUsed = false;
+	comodinSaltarPreguntaUsed = false;
+	$("#comodinSaltarPregunta").show();
+	$("#comodinEliminarOpciones").show();
+	
 	openNewPlayerDialog();
 }
 
@@ -78,7 +87,7 @@ function afterMovePlayer(positions){
 	}
 	
 	while(currentPregunta>=preguntas[currentTipoPregunta].preguntas.length){
-		currentPregunta -= preguntas[currentTipoPregunta].preguntas.length-2;
+		currentPregunta -= preguntas[currentTipoPregunta].preguntas.length;
 		currentTipoPregunta++;
 	}
 	openQuestionDialog();
@@ -103,4 +112,28 @@ function checkForWin(){
 function roundNumber(num, dec) {
 	var result = Math.round(num*Math.pow(10,dec))/Math.pow(10,dec);
 	return result;
+}
+
+function saltarPregunta(){
+	closeQuestionDialog();
+	comodinSaltarPreguntaUsed = true;
+	$("#comodinSaltarPregunta").hide();
+}
+
+function eliminarOpciones(){
+	var opcionesEliminar = Math.floor(preguntas[currentTipoPregunta].preguntas[currentPregunta].opciones.length / 2);
+	var opcionesEliminadas = 0;
+	var i = 0;
+	var liList = $("#questionList>ul>li");
+	while(opcionesEliminadas < opcionesEliminar){
+		if(i != preguntas[currentTipoPregunta].preguntas[currentPregunta].correcta){
+			$(liList[i]).fadeOut();
+			opcionesEliminadas++;
+		}
+		i++;
+	}
+	
+	comodinEliminarOpcionesUsed = true;
+	$("#comodinEliminarOpciones").hide();
+	$("#btnEliminarOpciones").fadeOut();
 }

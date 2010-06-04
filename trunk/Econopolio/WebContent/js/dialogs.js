@@ -18,6 +18,8 @@ function openQuestionDialog(){
 	$("#dialogQuestion").html(preguntas[currentTipoPregunta].preguntas[currentPregunta].pregunta);
 	$("#questionList").html("");
 	var ul = $("<ul>");
+	var ulComodines = $("<ul>");
+	
 	for(var i=0; i<preguntas[currentTipoPregunta].preguntas[currentPregunta].opciones.length; i++){
 		var opcion = $("<a>").attr("href", "#").attr("id", "btnQuestion" + i).addClass("questionOption");
 		opcion.attr("onclick", "evaluarRespuesta(" + i + ")");
@@ -26,7 +28,22 @@ function openQuestionDialog(){
 		li.append(opcion);
 		ul.append(li);
 	}
+	if(!comodinSaltarPreguntaUsed){
+		var liComodinSaltarPregunta = $("<li>").attr("href", "#").attr("id", "btnSaltarPregunta").addClass("questionOption");
+		liComodinSaltarPregunta.html("Saltar pregunta");
+		liComodinSaltarPregunta.attr("onclick", "saltarPregunta()");
+		ulComodines.append(liComodinSaltarPregunta);
+	}
+	
+	if(!comodinEliminarOpcionesUsed){
+		var liComodinEliminarOpciones = $("<li>").attr("href", "#").attr("id", "btnEliminarOpciones").addClass("questionOption");
+		liComodinEliminarOpciones.html("Eliminar opciones");
+		liComodinEliminarOpciones.attr("onclick", "eliminarOpciones()");
+		ulComodines.append(liComodinEliminarOpciones);
+	}
+	
 	$("#questionList").append(ul);
+	$("#questionList").append(ulComodines);
 	
 	$("#questionDialog").dialog({
 		modal: true,
