@@ -99,6 +99,8 @@ body{
 
 .questionOption{
 	color: white;
+	cursor: pointer;
+	text-decoration: underline;
 }
 
 .questionOption:hover{
