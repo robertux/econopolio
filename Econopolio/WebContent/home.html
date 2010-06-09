@@ -59,6 +59,7 @@
 		</div>
 		<div id="questionDialog" style="display: none">
 			<p>
+				<img id="questionImage" src="" alt="" />
 				<label id="dialogQuestion">Ejemplo de pregunta</label>
 			</p>
 			<p id="questionList">
@@ -68,6 +69,7 @@
 			</p>
 			<p>
 				<div id="result"></div>
+				<div id="resultImg"></div>
 			</p>
 		</div>
 		<div id="newPlayerDialog" style="display: none;">
@@ -83,12 +85,18 @@
 				<label>Juego terminado. usted tiene capital cero en su empresa. Debe jugar nuevamente</label>
 			</p>
 			<p>
+				<div class="gameOver"></div>
+			</p>
+			<p>
 				<input id="btnOk" type="button" class="button" onclick="closeGameOverDialog();" value="OK" />
 			</p>
 		</div>
 		<div id="winDialog" style="display: none;">
 			<p>
 				<label id="title">Felicidades!</label>
+			</p>
+			<p>
+				<div class="gameWin"></div>
 			</p>
 			<p>
 				<label id="content">Has participado contestando # preguntas, de las cuales # fueron correctamente contestadas. Tu puntuación es de #%</label>

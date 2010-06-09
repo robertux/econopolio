@@ -15,10 +15,23 @@ function closeConfirmDialog(answer){
 
 function openQuestionDialog(){
 	$("#result").html("");
+	$("#resultImg").attr("class", "");
 	$("#dialogQuestion").html(preguntas[currentTipoPregunta].preguntas[currentPregunta].pregunta);
 	$("#questionList").html("");
 	var ul = $("<ul>");
 	var ulComodines = $("<ul>");
+	var preguntaEspecial = preguntas[currentTipoPregunta].preguntas[currentPregunta].correcta == -1;
+	
+	switch(preguntas[currentTipoPregunta].tipo){
+		case "Planificación": $("#questionImage").attr("src", ""); break;
+		case "Precaución": $("#questionImage").attr("src", "media/inversion.png"); break;
+		case "Producción y almacenamiento": $("#questionImage").attr("src", "media/produccion.png"); break;
+		case "Economía y financiamiento": $("#questionImage").attr("src", "media/economia.png"); break;
+		case "Organización": $("#questionImage").attr("src", ""); break;
+		case "Marketing": $("#questionImage").attr("src", ""); break; 
+		case "Castigo": $("#questionImage").attr("src", "media/castigo.png"); break;
+		case "Oportunidad": $("#questionImage").attr("src", "media/oportunidad.png"); break;
+	}
 	
 	for(var i=0; i<preguntas[currentTipoPregunta].preguntas[currentPregunta].opciones.length; i++){
 		var opcion = $("<a>").attr("href", "#").attr("id", "btnQuestion" + i).addClass("questionOption");
@@ -28,14 +41,14 @@ function openQuestionDialog(){
 		li.append(opcion);
 		ul.append(li);
 	}
-	if(!comodinSaltarPreguntaUsed){
+	if(!comodinSaltarPreguntaUsed && !preguntaEspecial){
 		var liComodinSaltarPregunta = $("<li>").attr("href", "#").attr("id", "btnSaltarPregunta").addClass("questionOption");
 		liComodinSaltarPregunta.html("Saltar pregunta");
 		liComodinSaltarPregunta.attr("onclick", "saltarPregunta()");
 		ulComodines.append(liComodinSaltarPregunta);
 	}
 	
-	if(!comodinEliminarOpcionesUsed){
+	if(!comodinEliminarOpcionesUsed && !preguntaEspecial){
 		var liComodinEliminarOpciones = $("<li>").attr("href", "#").attr("id", "btnEliminarOpciones").addClass("questionOption");
 		liComodinEliminarOpciones.html("Eliminar opciones");
 		liComodinEliminarOpciones.attr("onclick", "eliminarOpciones()");
@@ -101,7 +114,7 @@ function openWinDialog(){
 		modal: true,
 		title: "Felicidades!",
 		width: 700,
-		height: 288
+		height: 385
 	});
 }
 
