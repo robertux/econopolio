@@ -106,3 +106,27 @@ body{
 .questionOption:hover{
 	color: #2E7DB2; 
 }
+
+#resultImg.answerWin{
+	background: url(../media/rightAnswer.png) no-repeat;
+	width: 93px;
+	height: 124px;
+}
+
+#resultImg.answerFail{
+	background: url(../media/wrongAnswer.png) no-repeat;
+	width: 117px;
+	height: 111px;
+}
+
+.gameOver{
+	background: url(../media/gameOver.png) no-repeat;
+	width: 118px;
+	height: 103px;
+}
+
+.gameWin{
+	background: url(../media/win.png) no-repeat;
+	width: 111px;
+	height: 129px;
+}

@@ -54,19 +54,18 @@ var preguntas =
 							"Con las inversiones financieras se adquieren activos como materias primas, mercaderías, mobiliario, elementos de transporte, etc.",
 							"Una de las clasificaciones de las inversiones distingue entre inversiones de activo fijo e inversiones de activo circulante"],
 				correcta: 3
+			}]},
+		{	tipo: "Precaución",
+			preguntas: [
+			{	pregunta: "Compra de seguro contra desastres",
+				opciones: ["Aceptar", "Rechazar"],
+				correcta: -1,
+				keyword: "seguro"
 			},
-			{	pregunta: "Si tuviéramos que invertir en varios proyectos de inversión alternativos, aplicando el método VAN, nos decidiríamos por:.",
-				opciones: ["Invertir en el proyecto cuyo VAN sea mayor",
-							"Invertir en el proyecto cuyo VAN sea menor",
-							"Invertir en el proyecto cuyo VAN sea igual a cero",
-							"Invertir en el proyecto cuyo VAN sea negativo"],
-				correcta: 0
-			},
-			{	pregunta: "Para usted, ¿Que es objetivo?",
-				opciones: ["Un enunciado detallado, preciso y medible de los resultados esperados.",
-							"Lo que se pretende hacer, no importa lo imposible que parezca",
-							"la intención de desarrollar un proyecto"],
-				correcta: 0
+			{	pregunta: "Adquisición de contrato a empresa de seguridad",
+				opciones: ["Aceptar", "Rechazar"],
+				correcta: -1,
+				keyword: "seguridad"
 			}]
 	},
 	{	tipo: "Producción y almacenamiento",
@@ -80,7 +79,7 @@ var preguntas =
 			}
 		]
 	},
-	{	tipo: "Economia y financiamiento",
+	{	tipo: "Economía y financiamiento",
 		preguntas: [
 			{	pregunta: "¿Cuál de las siguientes medidas tomarías para solucionar un problema de desequilibrio financiero a corto plazo en una empresa?",
 				opciones: ["Incrementar el período de cobro a clientes",
@@ -91,7 +90,7 @@ var preguntas =
 			}
 		]
 	},
-	{	tipo: "Organizacion",
+	{	tipo: "Organización",
 		preguntas: [
 			{	pregunta: "Para usted, ¿Cuál debe ser la principal función de la empresa?",
 				opciones: ["La de producir la mayor cantidad de productos posible",
@@ -148,22 +147,22 @@ var preguntas =
 							"Existe una escala jerárquica que delimita quien ejerce la autoridad",
 							"Se debe desarrollar un solo programa cuando las operaciones tienen un único fin."],
 				correcta: 0
+			}
+		]},
+	{	tipo: "Precaución",
+		preguntas: [
+			{	pregunta: "Adquisición de nueva maquinaria para aumentar la capacidad productiva",
+				opciones: ["Aceptar", "Rechazar"],
+				correcta: -1,
+				keyword: "maquinaria"
 			},
-			{	pregunta: "El elemento que transmite un mensaje hasta un receptor es:",
-				opciones: ["Un transmisor",
-							"Un ruido en la comunicación",
-							"Un canal de comunicación",
-							"Un correo"],
-				correcta: 2
-			},
-			{	pregunta: "Si una empresa tuviese muchos puntos de venta, lo lógico sería hacer:",
-				opciones: ["Una departamentalización geográfica",
-							"Una departamentalización por funciones",
-							"Una departamentalización por clientes",
-							"Una departamentalización por productos"],
-				correcta: 0
-			},
-			]},
+			{	pregunta: "Producción de productos intermedios",
+				opciones: ["Aceptar", "Rechazar"],
+				correcta: -1,
+				keyword: "productos"
+			}
+		]
+	},
 	{	tipo: "Producción y almacenamiento",
 		preguntas: [
 			{	pregunta: "Indique la mejor opción que define productividad",
@@ -175,7 +174,7 @@ var preguntas =
 			}
 		]
 	},
-	{	tipo: "Economia y financiamiento",
+	{	tipo: "Economía y financiamiento",
 		preguntas: [
 			{	pregunta: "¿Cuál es la correcta definición de quiebra?",
 				opciones: ["Situación de falta de liquidez ya que la empresa no tiene disponibilidad para hacer frente a sus deudas en las fechas de sus respectivos vencimientos",
@@ -244,42 +243,34 @@ var preguntas =
 							"Compran en grandes cantidades para vender a otros intermediarios"],
 				correcta: 3
 			},
-			{	pregunta: "Las variables de marketing-mix son:",
-				opciones: ["Producto, Precio, Promoción y Distribución",
-							"Investigación y Segmentación de mercados",
-							"Investigación comercial, canales de información, recepción de la información y tratamiento de la misma",
-							"Publicidad, Promoción y Distribución"],
-				correcta: 0
+		]
+	},
+	{	tipo: "Castigo",
+		preguntas: [
+			{	pregunta: "Lo sentimos ha ocurrido un desastre, si no tienes seguro pierdes el 50% de tu capital",
+				opciones: ["Ok"],
+				correcta: -1,
+				keyword: "seguro"
 			},
-			{	pregunta: "Dividir el mercado en subgrupos homogéneos con el fin de realizar estrategias comerciales diferenciadas, es:",
-				opciones: ["Segmentar el mercado",
-							"Promocionar el producto",
-							"Investigar el mercado",
-							"Diferenciar el producto"],
-				corecta: 0
+			{	pregunta: "Lo sentimos ha hay asaltantes dentro de tu almacén, si no tienes seguridad privada pierdes el 30% de tu capital",
+				opciones: ["Ok"],
+				correcta: -1,
+				keyword: "seguridad"
 			}
 		]
 	},
-	{	tipo: "Producción y almacenamiento",
+	{	tipo: "Oportunidad",
 		preguntas: [
-			{	pregunta: "¿Sabe qué funciones cumplen los inventarios?",
-				opciones: ["Realizar funciones especulativas",
-							"Servir de reguladores entre los ritmos de salida de unas fases de producción y de entrada de otras",
-							"Hacer frente a la oferta de bienes",
-							"Acumular existencias para que el Activo de una empresa sea grande"],
-				correcta: 1
+			{	pregunta: "Te llega un contrato por el doble de tu producción normal a corto plazo, si tienes mayor capacidad productiva incrementas tu capital en un 50%",
+				opciones: ["Ok"],
+				correcta: -1,
+				keyword: "maquinaria"
+			},
+			{	pregunta: "Te llega un contrato que necesitas productos intermedios a corto plazo, si produces este tipo de producto incrementas tu capital en un 30%",
+				opciones: ["Ok"],
+				correcta: -1,
+				keyword: "productos"
 			}
 		]
-	},
-	{	tipo: "Economia y financiamiento",
-		preguntas: [
-			{	pregunta: "La relación entre el resultado obtenido por una empresa y el capital de la misma, se denomina:",
-				opciones: ["Economicidad",
-							"Rentabilidad",
-							"Productividad",
-							"Eficiencia"],
-				correcta: 1
-			}
-		]
-	},
+	}
 ];
