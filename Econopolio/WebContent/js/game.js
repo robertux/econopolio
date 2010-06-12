@@ -50,9 +50,9 @@ function startNewGame(){
 function evaluarRespuesta(respuesta){
 	var preguntaEspecial = preguntas[currentTipoPregunta].preguntas[currentPregunta].correcta == -1;
 	
-	var esPreguntaPrecaucion = (preguntas[currentTipoPregunta].indexOf("Precaución") >= 0);
-	var esPreguntaOportunidad = (preguntas[currentTipoPregunta].indexOf("Oportunidad") >= 0);
-	var esPreguntaCastigo = (preguntas[currentTipoPregunta].indexOf("Castigo") >= 0);
+	var esPreguntaPrecaucion = (preguntas[currentTipoPregunta].tipo.indexOf("Precaución") >= 0);
+	var esPreguntaOportunidad = (preguntas[currentTipoPregunta].tipo.indexOf("Oportunidad") >= 0);
+	var esPreguntaCastigo = (preguntas[currentTipoPregunta].tipo.indexOf("Castigo") >= 0);
 	
 	var keyword = preguntas[currentTipoPregunta].preguntas[currentPregunta].keyword;
 	
