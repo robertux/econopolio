@@ -1,0 +1,1 @@
+Juego similar a monopolio hecho con html, css y javascript basado en preguntas aleatorias referentes a economía. El videojuego sirve como tarea y como prueba de concepto de las habilidades de jQuery para crear animaciones para videojuegos.
